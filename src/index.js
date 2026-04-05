@@ -17,9 +17,8 @@ process.on("SIGTERM", async () => {
 
 const bootstrap = async () => {
   try {
-    // 1. Сначала подключаемся к MongoDB
     await connectDB();
-    // 2. Только после успеха запускаем Express
+
     startServer();
   } catch (error) {
     console.error("Ошибка при запуске приложения:", error);
