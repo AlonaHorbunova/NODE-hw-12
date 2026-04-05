@@ -2,6 +2,7 @@ import "dotenv/config";
 import { connectDB, closeDB } from "./db/index.js";
 import startServer from "./server.js";
 
+// Корректное завершение работы при нажатии Ctrl+C
 process.on("SIGINT", async () => {
   console.log("Завершение работы приложения (SIGINT)");
   await closeDB();
@@ -16,7 +17,9 @@ process.on("SIGTERM", async () => {
 
 const bootstrap = async () => {
   try {
+    // 1. Сначала подключаемся к MongoDB
     await connectDB();
+    // 2. Только после успеха запускаем Express
     startServer();
   } catch (error) {
     console.error("Ошибка при запуске приложения:", error);

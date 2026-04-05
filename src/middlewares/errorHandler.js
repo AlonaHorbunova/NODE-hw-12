@@ -1,4 +1,4 @@
-function errorHandler(error, _req, res, _next) {
+export default function errorHandler(error, _req, res, _next) {
   console.error("Ошибка на сервере:", error);
 
   const statusCode = res.statusCode !== 200 ? res.statusCode : 500;
