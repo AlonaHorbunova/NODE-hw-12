@@ -1,7 +1,7 @@
 import { ObjectId } from "mongodb";
 import { getDB } from "../db/index.js";
 import { isValidObjectId } from "../utils/isValidObjectId.js";
-// Валидацию мы поправим следующим шагом, пока импортируем так
+
 import {
   validateProductOnCreate,
   validateProductOnUpdate,
